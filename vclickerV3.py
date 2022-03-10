@@ -27,7 +27,7 @@ button_reset = tk.Button(text='reset')
 
 reset_label = tk.Label(text= '')
 
-def up_button():
+def up_button(event):
     global counter, counter_label,window, up
     counter = counter + 1
     counter_label.config(text= counter, bg=color(counter))
@@ -35,7 +35,7 @@ def up_button():
     
     
 
-def down_button():
+def down_button(eventt):
     global counter, counter_label,window, color, up
     counter = counter - 1
     counter_label.config(text= counter, bg=color(counter))
@@ -115,6 +115,9 @@ button_reset.pack(ipady=25,
 counter_label.bind("<Enter>",TempColor)
 counter_label.bind("<Leave>",TempcolorEnd)
 counter_label.bind("<Double-Button-1>", DoubleClick)
+window.bind('<Up>', up_button)
+window.bind('<Down>', down_button)
+window.bind('<space>', DoubleClick)
 
 
 window.mainloop()
