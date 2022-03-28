@@ -55,7 +55,7 @@ def color(counter):
         color_choice = "grey"
     return color_choice
 
-def reset():
+def reset(event ):
     global counter, counter_label, reset_label
 
     if counter > 0 or counter < 0 :
@@ -118,6 +118,7 @@ counter_label.bind("<Double-Button-1>", DoubleClick)
 window.bind('<Up>', up_button)
 window.bind('<Down>', down_button)
 window.bind('<space>', DoubleClick)
+window.bind('<Return>', reset)
 
 
 window.mainloop()
